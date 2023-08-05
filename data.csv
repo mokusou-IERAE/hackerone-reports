@@ -1,4 +1,6 @@
 program,title,link,upvotes,bounty,vuln_type
+,,hackerone.com/reports/1941390,0,0.0,
+,,hackerone.com/reports/1842829,0,0.0,
 HackerOne,Takeover of hackerone.engineering via Github,hackerone.com/reports/2085260,43,1000.0,Privilege Escalation
 RATELIMITED,Apache mod_negotiation filename bruteforcing https://api.ratelimited.me,hackerone.com/reports/475167,13,0.0,
 GitHub,Smuggling content in PR with refs/replace in GitHub,hackerone.com/reports/1938106,7,4000.0,Resource Injection
