@@ -40,6 +40,16 @@ def top_100_upvoted(reports):
                 '{0}. [{1}](https://{2}) to {3} - {4} upvotes, ${5}\n'.format(i + 1, report['title'], report['link'],
                                                                               report['program'],
                                                                               report['upvotes'], int(report['bounty'])))
+def all_upvoted(reports):
+    upvotes_sorted_reports = list(reversed(sorted(reports, key=lambda k: k['upvotes'])))
+    with open('tops_100/ALLUPVOTED.md', 'w', encoding='utf-8') as file:
+        file.write('All upvoted reports from HackerOne:\n\n')
+        for i, report in enumerate(upvotes_sorted_reports):
+            file.write(
+                '{0}. [{1}](https://{2}) to {3} - {4} upvotes, ${5}\n'.format(i + 1, report['title'], report['link'],
+                                                                              report['program'],
+                                                                              report['upvotes'], int(report['bounty'])))
+
 
 
 def top_100_paid(reports):
@@ -95,6 +105,7 @@ def main():
     print('Max title length:', max_title_length)
 
     top_100_upvoted(reports)
+    all_upvoted(reports)
     top_100_paid(reports)
 
     top_by_bug_type(reports, 'XSS', 'XSS', ['css', 'xss', 'domxss', 'cross site scripting', ])
